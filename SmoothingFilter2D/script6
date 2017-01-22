@@ -1,0 +1,26 @@
+./a.out ../Data/test_velocity.SEP \
+        ../Data/test_velocity_smooth.SEP \
+        3 \
+        1;
+./a.out ../Data/test_velocity_s.SEP \
+        ../Data/test_velocity_s_smooth.SEP \
+        3 \
+        1;
+
+./a.out ../Data/out_velocity.SEP \
+        ../Data/out_velocity_smooth.SEP \
+        3 \
+        1;
+./a.out ../Data/out_velocity_s.SEP \
+        ../Data/out_velocity_s_smooth.SEP \
+        3 \
+        1;
+./a.out ../Data/out_epsilon.SEP \
+        ../Data/out_epsilon_smooth.SEP \
+        3 \
+        0;
+./a.out ../Data/out_delta.SEP \
+        ../Data/out_delta_smooth.SEP \
+        3 \
+        0;
+

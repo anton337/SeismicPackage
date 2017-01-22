@@ -1,0 +1,9 @@
+../bin/show ../Data/resampled_simple_modeling_trace_data.SEP &
+./a.out ../Data/resampled_simple_modeling_trace_data.SEP   \
+        ../Data/resampled_simple_modeling_trace_data.SEP@  \
+        ../Data/agc_simple_modeling_trace_data.SEP         \
+        ../Data/agc_simple_modeling_trace_data.SEP@        \
+        0.004                                              \
+        2.3                                                ;
+../bin/show ../Data/agc_simple_modeling_trace_data.SEP
+

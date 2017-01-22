@@ -1,0 +1,5 @@
+./a.out ../Data/synthetic_velocity.SEP \
+        ../Data/smooth_synthetic_velocity.SEP \
+        3 
+
+

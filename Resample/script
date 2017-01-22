@@ -1,0 +1,2 @@
+./a.out ../Data/muted_simple_modeling_trace_data.SEP ../Data/muted_simple_modeling_trace_data.SEP@ ../Data/resampled_simple_modeling_trace_data.SEP ../Data/resampled_simple_modeling_trace_data.SEP@ 1 10
+../bin/show ../Data/resampled_simple_modeling_trace_data.SEP

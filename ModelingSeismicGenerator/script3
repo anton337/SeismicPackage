@@ -1,0 +1,16 @@
+./a.out ../Data/synthetic_velocity.SEP      \
+        5                                   \
+        5                                   \
+        ../Data/wavelet_data.SEP            \
+        0.4                                 \
+        2000                                \
+        0.4                                 \
+        800                                 \
+        20                                  \
+        -5                                  \
+        50                                  \
+        2000                                \
+        500                                 \
+        ../Data/modeling_trace_data.SEP     \
+        ../Data/modeling_trace_data.SEP@    \
+

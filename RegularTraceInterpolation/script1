@@ -1,0 +1,5 @@
+./a.out ../Data/synthetic_data_set_1.SEP \
+        ../Data/interpolated_data_set_orig.SEP \
+        3 \
+        1 \
+

@@ -1,0 +1,11 @@
+../bin/show ../Data/synthetic_data_set.SEP &
+./a.out ../Data/synthetic_data_set.SEP \
+        ../Data/srme_prediction.SEP ;
+../bin/show ../Data/srme_prediction.SEP &
+../bin/add ../Data/synthetic_data_set.SEP \
+           ../Data/synthetic_data_set.SEP@ \
+           ../Data/srme_prediction.SEP \
+           ../Data/srme_prediction.SEP@ \
+           1 ;
+../bin/show ../Data/srme_prediction.SEP &
+

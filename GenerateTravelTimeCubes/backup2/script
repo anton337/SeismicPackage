@@ -1,0 +1,7 @@
+./a.out ../Data/marmousi_vel_in_smooth_2.SEP \
+        ../Data/ray_tracing.SEP \
+        4000 \
+        0.545 \
+        0.005
+
+

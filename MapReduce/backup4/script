@@ -1,0 +1,4 @@
+./a.out 0 network_topology & \
+./a.out 1 network_topology & \
+./a.out 2 network_topology & \
+./a.out 3 network_topology  \

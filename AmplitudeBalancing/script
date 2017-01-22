@@ -1,0 +1,6 @@
+../bin/show ../Data/agc_simple_modeling_trace_data.SEP &
+./a.out ../Data/agc_simple_modeling_trace_data.SEP \
+        ../Data/agc_simple_modeling_trace_data.SEP@ \
+        ../Data/balanced_simple_modeling_trace_data.SEP \
+        ../Data/balanced_simple_modeling_trace_data.SEP@ ;
+../bin/show ../Data/balanced_simple_modeling_trace_data.SEP

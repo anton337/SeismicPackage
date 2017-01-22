@@ -1,0 +1,2 @@
+./a.out ../Data/simple_modeling_trace_data.SEP ../Data/simple_modeling_trace_data.SEP@ ../Data/muted_simple_modeling_trace_data.SEP ../Data/muted_simple_modeling_trace_data.SEP@ -1 799.2 3591.54     732 3040.44     580 1705.8     456.8 828.529     423.2 644.828     381.6 637.33     339.2 847.274     240 1563.33     106.4 2688.03     0 3576.55;
+# ../bin/show ../Data/muted_simple_modeling_trace_data.SEP

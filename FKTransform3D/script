@@ -1,0 +1,4 @@
+./a.out ../Data/synthetic_sort_set.SEP \
+        ../Data/fk3d_data_set.SEP 
+
+

@@ -1,0 +1,24 @@
+../bin/calculate_gradient ../Data/marmousi_vel_in.SEP   \
+                          ../Data/marmousi_nuz_in.SEP   \
+                          25                            \
+                          0                             \
+                          2                             ;
+
+../bin/calculate_gradient ../Data/marmousi_vel_out.SEP  \
+                          ../Data/marmousi_nuz_out.SEP  \
+                          25                            \
+                          0                             \
+                          2                             ;
+
+../bin/calculate_gradient ../Data/marmousi_vel_in.SEP   \
+                          ../Data/marmousi_nux_in.SEP   \
+                          25                            \
+                          0                             \
+                          1                             ;
+
+../bin/calculate_gradient ../Data/marmousi_vel_out.SEP  \
+                          ../Data/marmousi_nux_out.SEP  \
+                          25                            \
+                          0                             \
+                          1                             ;
+

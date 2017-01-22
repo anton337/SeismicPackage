@@ -1,0 +1,5 @@
+../bin/smoothing_filter_2D ../Data/marmousi_vel_in_padded.SEP \
+                           ../Data/marmousi_vel_in_smooth_2.SEP \
+                           30 \
+                           1;
+

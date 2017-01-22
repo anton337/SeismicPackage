@@ -1,0 +1,7 @@
+./a.out ../Data/constant_velocity.SEP \
+        ../Data/anisotropic_modeling_wave_propagation.SEP \
+        150 \
+        0.5\
+        0.5
+
+

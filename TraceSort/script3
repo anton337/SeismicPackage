@@ -1,0 +1,5 @@
+./a.out ../Data/seismic_merged.SEP         \
+        ../Data/seismic_merged_sorted.SEP  \
+        0                                  \
+        2 D3 D2                            \
+

@@ -1,0 +1,2 @@
+./a.out ~/Downloads/seismic.h ~/Downloads/seis-080.h@ ../Data/seismic.SEP ../Data/seis-080.SEP@ 500 -4 -1;
+./a.out ../Data/seismic.SEP ../Data/seis-080.SEP@ ../Data/seismic.SEP ../Data/seis-080.SEP@ 700 0 1;

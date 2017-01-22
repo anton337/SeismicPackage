@@ -1,0 +1,7 @@
+./a.out ~/Downloads/velocity.h \
+        ../Data/wave_propagation.SEP \
+        250 \
+        0.545 \
+        0.515
+
+

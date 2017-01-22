@@ -1,0 +1,6 @@
+../bin/show ../Data/radon_data_set.SEP &
+./a.out ../Data/radon_data_set.SEP \
+        ../Data/auto_correlation_data_set.SEP ;
+../bin/show ../Data/auto_correlation_data_set.SEP ;
+
+

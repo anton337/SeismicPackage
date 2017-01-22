@@ -1,0 +1,18 @@
+./a.out ../Data/marmousi_vel_in.SEP         \
+        ../Data/marmousi_vel_s_in.SEP       \
+        ../Data/marmousi_epsilon_in.SEP     \
+        ../Data/marmousi_delta_in.SEP       \
+        ../Data/marmousi_nux_in.SEP         \
+        ../Data/marmousi_nuy_in.SEP         \
+        ../Data/marmousi_nuz_in.SEP         \
+        ../Data/marmousi_vel_out.SEP        \
+        ../Data/marmousi_vel_s_out.SEP      \
+        ../Data/marmousi_epsilon_out.SEP    \
+        ../Data/marmousi_delta_out.SEP      \
+        ../Data/marmousi_nux_out.SEP        \
+        ../Data/marmousi_nuy_out.SEP        \
+        ../Data/marmousi_nuz_out.SEP        \
+        ../Data/horizon_input               \
+        ../Data/horizon_output              \
+        ../Data/output_script3              \
+

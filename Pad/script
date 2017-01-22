@@ -1,0 +1,6 @@
+../bin/pad ../Data/marmousi_vel_in.SEP \
+           ../Data/marmousi_vel_in.SEP@ \
+           ../Data/marmousi_vel_in_padded.SEP \
+           ../Data/marmousi_vel_in_padded.SEP@ \
+           200 0 0 0
+

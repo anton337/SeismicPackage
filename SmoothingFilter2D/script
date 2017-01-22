@@ -1,0 +1,5 @@
+./a.out ../Data/synthetic_data_set.SEP \
+        ../Data/smoothed_data_set.SEP \
+        5
+
+

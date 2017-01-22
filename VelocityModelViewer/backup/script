@@ -1,0 +1,15 @@
+./a.out ../Data/test_velocity.SEP   \
+        ../Data/test_velocity_s.SEP \
+        ../Data/test_epsilon.SEP    \
+        ../Data/test_delta.SEP      \
+        ../Data/test_nu_x.SEP       \
+        ../Data/test_nu_y.SEP       \
+        ../Data/test_nu_z.SEP       \
+        ../Data/out_velocity.SEP    \
+        ../Data/out_velocity_s.SEP  \
+        ../Data/out_epsilon.SEP     \
+        ../Data/out_delta.SEP       \
+        ../Data/out_nu_x.SEP        \
+        ../Data/out_nu_y.SEP        \
+        ../Data/out_nu_z.SEP        \
+

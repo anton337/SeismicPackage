@@ -1,0 +1,40 @@
+../bin/smoothing_filter_2D ../Data/marmousi_vel_in.SEP           \
+                           ../Data/marmousi_vel_in_smooth.SEP    \
+                                                               3 \
+                                                               1;
+../bin/smoothing_filter_2D ../Data/marmousi_vel_s_in.SEP           \
+                           ../Data/marmousi_vel_s_in_smooth.SEP    \
+                                                               3 \
+                                                               1;
+../bin/smoothing_filter_2D ../Data/marmousi_vel_out.SEP           \
+                           ../Data/marmousi_vel_out_smooth.SEP    \
+                                                               3 \
+                                                               1;
+../bin/smoothing_filter_2D ../Data/marmousi_vel_s_out.SEP           \
+                           ../Data/marmousi_vel_s_out_smooth.SEP    \
+                                                               3 \
+                                                               1;
+
+../bin/map_migration ../Data/marmousi_vel_in_smooth.SEP              \
+                     ../Data/marmousi_vel_s_in_smooth.SEP            \
+                     ../Data/marmousi_epsilon_in.SEP          \
+                     ../Data/marmousi_delta_in.SEP            \
+                     ../Data/marmousi_nux_in.SEP              \
+                     ../Data/marmousi_nuy_in.SEP              \
+                     ../Data/marmousi_nuz_in.SEP              \
+                     ../Data/marmousi_vel_out_smooth.SEP             \
+                     ../Data/marmousi_vel_s_out_smooth.SEP           \
+                     ../Data/marmousi_epsilon_out.SEP         \
+                     ../Data/marmousi_delta_out.SEP           \
+                     ../Data/marmousi_nux_out.SEP             \
+                     ../Data/marmousi_nuy_out.SEP             \
+                     ../Data/marmousi_nuz_out.SEP             \
+                     ../Data/wave_propagation_data.SEP        \
+                     ../Data/horizon_input                    \
+                     ../Data/horizon_output                   \
+                     0                                        \
+                     1500                                     \
+                     0.5                                      \
+                     0.5                                      ;
+
+

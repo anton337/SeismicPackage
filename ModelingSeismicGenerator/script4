@@ -1,0 +1,16 @@
+./a.out ../Data/simple_velocity.SEP                \
+        5                                          \
+        5                                          \
+        ../Data/wavelet_data.SEP                   \
+        0.4                                        \
+        1500                                       \
+        0.4                                        \
+        800                                        \
+        20                                         \
+        -5                                         \
+        50                                         \
+        2000                                       \
+        500                                        \
+        ../Data/simple_modeling_trace_data.SEP     \
+        ../Data/simple_modeling_trace_data.SEP@    \
+

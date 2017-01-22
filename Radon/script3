@@ -1,0 +1,11 @@
+../bin/show ../Data/synthetic_data_set.SEP &
+./a.out ../Data/synthetic_data_set.SEP \
+        ../Data/radon_data_set.SEP \
+        800 \
+        -1000 \
+        1000 \
+        -0.21 \
+        0.21 \
+        1 ;
+../bin/show ../Data/radon_data_set.SEP 
+

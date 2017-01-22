@@ -1,0 +1,11 @@
+../bin/show ../Data/resampled_simple_modeling_trace_data.SEP &
+./a.out ../Data/resampled_simple_modeling_trace_data.SEP \
+        ../Data/radon_simple_modeling_trace_data.SEP \
+        800 \
+        -1000 \
+        1000 \
+        -.35 \
+         .35 \
+        1 ;
+../bin/show ../Data/radon_simple_modeling_trace_data.SEP 
+

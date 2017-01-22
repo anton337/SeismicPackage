@@ -1,0 +1,17 @@
+./a.out ../Data/synthetic_velocity.SEP      \
+        5                                   \
+        5                                   \
+        ../Data/wavelet_data.SEP            \
+        0.4                                 \
+        1000                                \
+        0.4                                 \
+        800                                 \
+        1                                   \
+        -5                                  \
+        5                                   \
+        2000                                \
+        1000                                \
+        ../Data/rtm_image_output_data.SEP   \
+        ../Data/modeling_trace_data_GSC.SEP \
+        ../Data/modeling_trace_data_GSC.SEP@\
+

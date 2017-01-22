@@ -1,0 +1,5 @@
+./a.out ../Data/synthetic_data_set.SEP  \
+        ../Data/synthetic_sort_set.SEP  \
+        0                               \
+        2 CHAN FFID                     \
+

@@ -1,0 +1,6 @@
+../bin/show ../Data/radon_simple_modeling_trace_data.SEP &
+./a.out ../Data/radon_simple_modeling_trace_data.SEP \
+        ../Data/auto_correlation_simple_modeling_trace_data.SEP ;
+../bin/show ../Data/auto_correlation_simple_modeling_trace_data.SEP ;
+
+

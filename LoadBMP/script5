@@ -1,0 +1,7 @@
+./a.out ~/test_velocity.bmp ../Data/test_velocity.SEP 75 ;
+./a.out ~/test_velocity.bmp ../Data/test_velocity_s.SEP 37.5 ;
+./a.out ~/test_parameter.bmp ../Data/test_epsilon.SEP 0 ;
+./a.out ~/test_parameter.bmp ../Data/test_delta.SEP 0 ;
+./a.out ~/test_parameter.bmp ../Data/test_nu_x.SEP 0 ;
+./a.out ~/test_parameter.bmp ../Data/test_nu_y.SEP 0 ;
+./a.out ~/test_parameter1.bmp ../Data/test_nu_z.SEP 1 ;

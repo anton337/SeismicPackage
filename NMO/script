@@ -1,0 +1,38 @@
+../bin/show ../Data/synthetic_data_set.SEP          &
+./a.out ../Data/synthetic_data_set.SEP              \
+        ../Data/synthetic_data_set.SEP@             \
+        ../Data/time_synthetic_data_set.SEP         \
+        ../Data/time_synthetic_data_set.SEP@        \
+        ../Data/nmo_synthetic_data_set.SEP          \
+        ../Data/nmo_synthetic_data_set.SEP@         \
+        2                                           \
+        -2500  2500                                 \
+        1                                           \
+        100    2000                                 \
+        240    2100                                 \
+        340    2200                                 \
+        440    2300                                 \
+        940    3000                                 \
+        1540   4000                                 \
+        ;
+../bin/show ../Data/nmo_synthetic_data_set.SEP      &
+./a.out ../Data/nmo_synthetic_data_set.SEP          \
+        ../Data/nmo_synthetic_data_set.SEP@         \
+        ../Data/time_synthetic_data_set.SEP         \
+        ../Data/time_synthetic_data_set.SEP@        \
+        ../Data/inv_nmo_synthetic_data_set.SEP      \
+        ../Data/inv_nmo_synthetic_data_set.SEP@     \
+        2                                           \
+        -2500  2500                                 \
+        -1                                          \
+        100    2000                                 \
+        240    2100                                 \
+        340    2200                                 \
+        440    2300                                 \
+        940    3000                                 \
+        1540   4000                                 \
+        ;
+../bin/show ../Data/inv_nmo_synthetic_data_set.SEP  &
+
+
+

@@ -1,0 +1,14 @@
+#./a.out ../Data/test_velocity.SEP \
+#        ../Data/test_velocity.SEP \
+#        3;
+#./a.out ../Data/test_velocity_s.SEP \
+#        ../Data/test_velocity_s.SEP \
+#        3;
+
+./a.out ../Data/out_velocity.SEP \
+        ../Data/out_velocity.SEP \
+        3;
+./a.out ../Data/out_velocity_s.SEP \
+        ../Data/out_velocity_s.SEP \
+        3;
+

@@ -1,0 +1,7 @@
+./a.out ../Data/synthetic_velocity.SEP \
+        ../Data/anisotropic_modeling_wave_propagation.SEP \
+        200 \
+        0.545 \
+        0.515
+
+

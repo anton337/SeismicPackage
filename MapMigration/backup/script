@@ -1,0 +1,20 @@
+../bin/map_migration ../Data/test_velocity_smooth.SEP         \
+                     ../Data/test_velocity_s_smooth.SEP       \
+                     ../Data/test_epsilon.SEP                 \
+                     ../Data/test_delta.SEP                   \
+                     ../Data/test_nu_x.SEP                    \
+                     ../Data/test_nu_y.SEP                    \
+                     ../Data/test_nu_z.SEP                    \
+                     ../Data/out_velocity_smooth.SEP          \
+                     ../Data/out_velocity_s_smooth.SEP        \
+                     ../Data/out_epsilon_smooth.SEP           \
+                     ../Data/out_delta_smooth.SEP             \
+                     ../Data/out_nu_x.SEP                     \
+                     ../Data/out_nu_y.SEP                     \
+                     ../Data/out_nu_z.SEP                     \
+                     ../Data/wave_propagation_data.SEP        \
+                     700                                      \
+                     0.5                                      \
+                     0.5                                      \
+
+

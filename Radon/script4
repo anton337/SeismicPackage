@@ -1,0 +1,20 @@
+../bin/show ../Data/nmo_synthetic_data_set.SEP &
+./a.out ../Data/nmo_synthetic_data_set.SEP \
+        ../Data/radon_nmo_data_set.SEP \
+        1000 \
+        -1000 \
+        1000 \
+        -0.0008 \
+        0.0008 \
+        20 ;
+../bin/show ../Data/radon_nmo_data_set.SEP &
+./a.out ../Data/radon_nmo_data_set.SEP \
+        ../Data/inv_radon_nmo_data_set.SEP \
+        1000 \
+        -1000 \
+        1000 \
+        -0.0008 \
+        0.0008 \
+        -20 ;
+../bin/show ../Data/inv_radon_nmo_data_set.SEP 
+

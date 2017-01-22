@@ -1,0 +1,9 @@
+./a.out ~/Downloads/velocity.h       \
+        ../Data/seismic.SEP          \
+        ../Data/seis-080.SEP@        \
+        ../Data/rtm_output.SEP       \
+        6000                         \
+        0.545                        \
+        0.0  
+
+

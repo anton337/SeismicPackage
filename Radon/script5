@@ -1,0 +1,57 @@
+../bin/show ../Data/synthetic_data_set.SEP &
+../bin/show ../Data/nmo_synthetic_data_set.SEP &
+#./a.out ../Data/nmo_synthetic_data_set.SEP \
+#        ../Data/radon_nmo_data_set.SEP \
+#        1000 \
+#        -1000 \
+#        1000 \
+#        -0.0008 \
+#        0.0008 \
+#        20 ;
+../bin/show ../Data/radon_nmo_data_set.SEP &
+#../bin/mute ../Data/radon_nmo_data_set.SEP \
+#            ../Data/radon_nmo_data_set.SEP@ \
+#            ../Data/muted_radon_nmo_data_set.SEP \
+#            ../Data/muted_radon_nmo_data_set.SEP@ \
+#            -1 \
+#            999 23.4 \
+#            746 46.8 \
+#            623 98.8 \
+#            565 330.2 \
+#            537 829.4 \
+#            205 1398.8 \
+#            5 1710.8 ;
+../bin/show ../Data/muted_radon_nmo_data_set.SEP &
+#./a.out ../Data/muted_radon_nmo_data_set.SEP \
+#        ../Data/inv_radon_nmo_data_set.SEP \
+#        1000 \
+#        -1000 \
+#        1000 \
+#        -0.0008 \
+#        0.0008 \
+#        -20 ;
+../bin/show ../Data/inv_radon_nmo_data_set.SEP &
+#../bin/add ../Data/nmo_synthetic_data_set.SEP \
+#           ../Data/nmo_synthetic_data_set.SEP@ \
+#           ../Data/inv_radon_nmo_data_set.SEP \
+#           ../Data/inv_radon_nmo_data_set.SEP@ \
+#           -0.00000015 ;
+../bin/show ../Data/inv_radon_nmo_data_set.SEP &
+#../bin/nmo ../Data/inv_radon_nmo_data_set.SEP      \
+#           ../Data/inv_radon_nmo_data_set.SEP@     \
+#           ../Data/time_synthetic_data_set.SEP     \
+#           ../Data/time_synthetic_data_set.SEP@    \
+#           ../Data/inv_nmo_synthetic_data_set.SEP  \
+#           ../Data/inv_nmo_synthetic_data_set.SEP@ \
+#           2                                       \
+#           -2500  2500                             \
+#           -1                                      \
+#           100    2000                             \
+#           240    2100                             \
+#           340    2200                             \
+#           440    2300                             \
+#           940    3000                             \
+#           1540   4000                             \
+#           ;
+../bin/show ../Data/inv_nmo_synthetic_data_set.SEP  &
+

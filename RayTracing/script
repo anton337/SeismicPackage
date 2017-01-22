@@ -1,0 +1,7 @@
+./a.out ../Data/smoothed_velocity_data_set.SEP \
+        ../Data/ray_tracing.SEP \
+        6000 \
+        0.545 \
+        0.015
+
+

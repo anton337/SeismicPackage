@@ -1,0 +1,7 @@
+./a.out ../Data/modeling_trace_data_muted.SEP   \
+        ../Data/modeling_trace_data_muted.SEP@  \
+        ../Data/modeling_trace_data_GSC.SEP     \
+        ../Data/modeling_trace_data_GSC.SEP@    \
+        0.001                                   \
+        1.2                                     \
+
