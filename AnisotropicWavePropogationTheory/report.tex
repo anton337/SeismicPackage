@@ -1,0 +1,125 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\begin{document}
+
+\title {Anisotropic Wave Propagation}
+
+\author {Anton Kodochygov}
+
+\begin{frame}
+\titlepage
+\end{frame}
+\begin{frame}
+
+\frametitle{Isotropic Elastic Modulus Matrix}
+
+\[ C =  \left( \begin{array}{cccccc}
+C_{33} & C_{12} & C_{12} & 0 & 0 & 0 \\
+C_{12} & C_{33} & C_{12} & 0 & 0 & 0 \\
+C_{12} & C_{12} & C_{33} & 0 & 0 & 0 \\
+0 & 0 & 0 & C_{55} & 0 & 0 \\
+0 & 0 & 0 & 0 & C_{55} & 0 \\
+0 & 0 & 0 & 0 & 0 & C_{55} \end{array} \right)\] 
+
+\begin{eqnarray}
+C_{12} &=& C_{33} - 2 C_{55} \nonumber
+\end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{VTI Elastic Modulus Matrix}
+
+\[ C =  \left( \begin{array}{cccccc}
+C_{11} & C_{11}-2C_{66} & C_{13} & 0 & 0 & 0 \\
+C_{11}-2C_{66} & C_{11} & C_{13} & 0 & 0 & 0 \\
+C_{13} & C_{13} & C_{33} & 0 & 0 & 0 \\
+0 & 0 & 0 & C_{44} & 0 & 0 \\
+0 & 0 & 0 & 0 & C_{44} & 0 \\
+0 & 0 & 0 & 0 & 0 & C_{66} \end{array} \right)\] 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{TTI Elastic Modulus Matrix}
+
+$C_{TTI} = M C_{VTI} M^T$
+
+M - Bond rotation matrix
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Exact Phase Velocities}
+\fontsize{6pt}{7.2}\selectfont
+
+\begin{eqnarray}
+V_{qP}(\xi) &=& \sqrt{\frac{C_{11}sin^2(\xi)+C_{33}cos^2(\xi)+C_{44}+\sqrt{M(\xi)}}{2\rho}} \nonumber \\
+V_{qS}(\xi) &=& \sqrt{\frac{C_{11}sin^2(\xi)+C_{33}cos^2(\xi)+C_{44}-\sqrt{M(\xi)}}{2\rho}} \nonumber \\
+V_{S}(\xi) &=& \sqrt{\frac{C_{66}sin^2(\xi)+C_{44}cos^2(\xi)}{\rho}} \nonumber \\
+M(\xi) &=& \left[(C_{11}-C_{44})sin^2(\xi)-(C_{33}-C_{44})cos^2(\xi)\right]^2 + (C_{13}+C_{44})^2sin^2(2\xi) \nonumber
+\end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Thomson Approximation - Weak Anisotropy $\delta,\gamma,\epsilon << 1$}
+\fontsize{6pt}{7.2}\selectfont
+
+\begin{eqnarray}
+V_{qP}(\xi) &\approx& V_{P0} (1 + \delta sin^2(\xi)cos^2(\xi) + \epsilon sin^4(\xi))\nonumber \\
+V_{qS}(\xi) &\approx& V_{S0} \left[ 1 + \left(\frac{V_{P0}}{V_{S0}}\right)^2 (\epsilon-\delta)sin^2(\xi)cos^2(\xi) \right]\nonumber \\
+V_{S}(\xi)  &\approx& V_{S0} (1 + \gamma sin^2(\xi))\nonumber
+\end{eqnarray}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Thomson Parameers from Elastic Moduli}
+\begin{eqnarray}
+\epsilon &=& \frac{C_{11}-C_{33}}{2C_{33}} \nonumber \\
+\delta &=& \frac{(C_{13}+C_{44})^2-(C_{33}-C_{44})^2}{2C_{33}(C_{33}-C_{44})} \nonumber \\
+\gamma &=& \frac{C_{66}-C_{44}}{2C_{44}} \nonumber \\
+V_{P0} &=& \sqrt{\frac{C_{33}}{\rho}} \nonumber \\
+V_{S0} &=& \sqrt{\frac{C_{44}}{\rho}} \nonumber 
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}
+\frametitle{Elastic Moduli from Thomson Parameters}
+\begin{eqnarray}
+C_{33} &=& V_{P0}^2 \rho \nonumber \\
+C_{44} &=& V_{S0}^2 \rho \nonumber \\
+C_{11} &=& 2 \epsilon C_{33} + C_{33} \nonumber \\
+C_{66} &=& 2 \gamma C_{44} + C_{44} \nonumber \\
+C_{13} &=& \sqrt{2 \delta C_{33} (C_{33} - C_{44}) + (C_{33} - C_{44})^2} - C_{44} \nonumber 
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}
+\frametitle{Isotropic Wave Propagation}
+\fontsize{6pt}{7.2}\selectfont
+\begin{eqnarray}
+\rho \frac{\partial^2 U}{\partial t^2} = \nabla^2 U + S \nonumber \\
+\rho_{i,j} \left( \frac{ U^{n+1}_{i,j} - 2 U^n_{i,j} + U^{n-1}_{i,j} }{ \Delta t^2 } \right) = \left( \frac{ U^n_{i+1,j} - 2 U^n_{i,j} + U^n_{i-1,j} }{ \Delta x^2 } \right) + \left( \frac{ U^n_{i,j+1} - 2 U^n_{i,j} + U^n_{i,j-1} }{ \Delta z^2 } \right) + S^n_{i,j} \nonumber \\
+U^{n+1}_{i,j} = 2 U^n_{i,j} - U^{n-1}_{i,j} + \frac{\Delta t^2}{\Delta x^2 \rho_{i,j} }\left( U^n_{i+1,j} - 2 U^n_{i,j} + U^n_{i-1,j} \right) + \frac{\Delta t^2}{\Delta z^2 \rho_{i,j} }\left( U^n_{i,j+1} - 2 U^n_{i,j} + U^n_{i,j-1} \right) + \frac{\Delta t^2}{\rho_{i,j}}S^n_{i,j} \nonumber
+\end{eqnarray}
+\end{frame}
+
+\begin{frame}
+\frametitle{Anisotropic Wave Propagation}
+\fontsize{3pt}{3.2}\selectfont
+\begin{eqnarray}
+\rho \frac{\partial^2 U}{\partial t^2} = \frac{\partial}{\partial x} \left( A \frac{\partial}{\partial x} + C \frac{\partial}{\partial z} \right) U + \frac{\partial}{\partial z} \left( G \frac{\partial}{\partial x} + Q \frac{\partial}{\partial z} \right) U + S \nonumber \\
+\rho_{i,j} \left( \frac{ U^{n+1}_{i,j} - 2 U^n_{i,j} + U^{n-1}_{i,j} }{ \Delta t^2 } \right) = \left( \frac{ A_{i+1/2,j}(U^n_{i+1,j} - U^n_{i,j}) - A_{i-1/2,j}( U^n_{i,j}- U^n_{i-1,j}) }{ \Delta x^2 } \right) \nonumber \\
+    + \left( \frac{ Q_{i,j+1/2} ( U^n_{i,j+1} - U^n_{i,j} ) - Q_{i,j-1/2} ( U^n_{i,j} - U^n_{i,j-1} ) }{ \Delta z^2 } \right) \nonumber \\
+    + \left( \frac{ C_{i+1,j} ( U^n_{i+1,j+1} - U^n_{i+1,j-1} ) - C_{i-1,j} ( U^n_{i-1,j+1} - U^n_{i-1,j-1} ) }{ 4 \Delta x \Delta z } \right) \nonumber \\
+    + \left( \frac{ G_{i,j+1} ( U^n_{i+1,j+1} - U^n_{i-1,j+1} ) - G_{i,j-1} ( U^n_{i+1,j-1} - U^n_{i-1,j-1} ) }{ 4 \Delta x \Delta z } \right) \nonumber \\
+    + S^n_{i,j} \nonumber \\
+    A_{i+1/2,j} = \frac{1}{2} (A_{i+1,j} + A_{i,j}) \nonumber \\
+    Q_{i,j+1/2} = \frac{1}{2} (Q_{i,j+1} + Q_{i,j}) \nonumber 
+\end{eqnarray}
+\end{frame}
+
+\end{document}
+
