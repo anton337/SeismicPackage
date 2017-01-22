@@ -1,0 +1,284 @@
+\documentclass[12pt]{article}
+\begin{document}
+
+\textbf{Anisotropic Ray Tracing}
+
+
+
+
+\textbf{TTI Tilted Transverse Isotropy}
+
+Eikonal Equation:
+\begin{eqnarray}
+G(x,\nabla \tau(x)) = 1
+\end{eqnarray}
+
+Eigenvalues of Christoffel matrix:
+\begin{eqnarray}
+G(x,p) &=& \frac{1}{2} \left( (a+b) + \sqrt{(a-b)^2+4c^2} \right) \hbox{pressure} \\
+G(x,p) &=& \frac{1}{2} \left( (a+b) - \sqrt{(a-b)^2+4c^2} \right) \hbox{shear} \\
+a &=& (1+2\epsilon)v_p^2||p||^2+\left[v_s^2-(1+2\epsilon)v_p^2\right]\zeta^2 \\
+b &=& v_s^2||p||^2+(v_p^2-v_s^2)\zeta^2 \\
+c^2 &=& h(||p||^2-\zeta^2)\zeta^2 \\
+h &=& \left[(1+2\delta)v_p^2-v_s^2\right]\left[v_p^2-v_s^2\right] \\
+\zeta &=& p \cdot \vec{\eta} \\
+\vec{\eta} &=& \left(\cos \beta \sin \alpha , \sin \beta \sin \alpha , \cos \alpha\right)
+\end{eqnarray}
+
+Hamiltonian Equation(s):
+
+\begin{eqnarray}
+\frac{dx}{dt} &=&  \frac{1}{2}\nabla_p G(x,p) \\
+\frac{dp}{dt} &=& -\frac{1}{2}\nabla_x G(x,p)
+\end{eqnarray}
+
+Alkilifah approximation ($v_s = 0$), solve only for pressure waves:
+
+\begin{eqnarray}
+a  &=& (1+2\epsilon)v_p^2||p||^2-(1+2\epsilon)v_p^2\zeta^2 \\
+b  &=& v_p^2\zeta^2 \\
+h  &=& (1+2\delta)v_p^4 \\
+A  &=& \frac{1}{v_p^2}\left(a+b\right)= \frac{1}{v_p^2}\left((1+2\epsilon)v_p^2||p||^2-(1+2\epsilon)v_p^2\zeta^2+v_p^2\zeta^2\right)\\
+   &=& (1+2\epsilon)||p||^2-2\epsilon\zeta^2 \\
+c^2&=& h(||p||^2-\zeta^2)\zeta^2 \\
+A_1&=& \frac{4c^2-4ab}{v_p^4}=\frac{4h(||p||^2-\zeta^2)\zeta^2-4(1+2\epsilon)v_p^2(||p||^2-\zeta^2)v_p^2\zeta^2}{v_p^4}\\
+   &=& \frac{4(1+2\delta)v_p^4(||p||^2-\zeta^2)\zeta^2-4(1+2\epsilon)v_p^2(||p||^2-\zeta^2)v_p^2\zeta^2}{v_p^4}\\
+   &=& 8(\delta-\epsilon)\zeta^2(||p||^2-\zeta^2) \\
+D  &=& A^2+A_1 = \left(\frac{a+b}{v_p^2}\right)^2 + \left(\frac{4c^2-4ab}{v_p^4}\right) = \left(\frac{a^2+2ab+b^2+4c^2-4ab}{v_p^4}\right) \nonumber \\
+   &=& \left(\frac{a^2-2ab+b^2+4c^2}{v_p^4}\right) = \left(\frac{(a-b)^2+4c^2}{v_p^4}\right) \\
+B  &=& A+\sqrt{D} = \left(\frac{(a+b)+\sqrt{(a-b)^2+4c^2}}{v_p^2}\right)\\
+G  &=& \frac{1}{2} v_p^2 B
+\end{eqnarray}
+
+So, the Hamiltonian system becomes:
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+A               &=&  (1+2\epsilon)||p||^2-2\epsilon\zeta^2 \\
+\nabla_p A      &=&  2(1+2\epsilon)\vec{p}-4\epsilon\zeta\vec{\eta}\\
+\nabla_x A      &=&  2(||p||^2-\zeta^2)\nabla_x \epsilon - 4\epsilon\zeta\nabla_x \zeta\\
+A_1             &=&  8(\delta-\epsilon)\zeta^2(||p||^2-\zeta^2) \\
+\nabla_p A_1    &=&  16(\delta-\epsilon)\left[\zeta^2\vec{p}+\zeta(||p||^2-2\zeta^2)\vec{\eta}\right]\\
+\nabla_x A_1    &=&  8\zeta^2(||p||^2-\zeta^2)(\nabla_x \delta - \nabla_x \epsilon) + 16\zeta(||p||^2-2\zeta^2)(\delta-\epsilon)\nabla_x \zeta \nonumber\\
+\nabla_x \zeta  &=&  \left[(p_1 \cos \beta + p_2 \sin \beta)\cos \alpha - p_3 \sin \alpha \right] \nabla_x \alpha + \sin \alpha (-p_1 \sin \beta + p_2 \cos \beta)\nabla_x \beta \nonumber
+\end{eqnarray}
+
+So, everything is in terms of cubes $v_p,\alpha,\beta,\epsilon,\delta$ and their gradients.
+Since the angles $\alpha,\beta$ are periodic, we need to worry about phase unwrapping in order to perform $\nabla_x \alpha,\nabla_x \beta$. Alternatively, we can estimate $\nabla_x \zeta$ directly. 
+
+\begin{eqnarray}
+\nabla_x \zeta  &=&  \nabla_x \vec{p} \cdot \vec{\eta} = (\vec{p} \cdot \nabla_x) \vec{\eta} \hbox{this is probabaly wrong, but needs verification} \nonumber \\
+\nabla_x \zeta  &=&  \nabla_x \vec{p} \cdot \vec{\eta} = \vec{p} \times (\nabla_x \times \vec{\eta}) + (\vec{p} \cdot \nabla_x) \vec{\eta} \hbox{this version is probabaly correct} \nonumber
+\end{eqnarray}
+
+\textbf{VTI Vertical Transverse Isotropy}
+
+VTI is a special case of TTI, where the tilted axis $\vec{\eta}$ is not tilted, but is parallel to the z axis. So, we substitute $\zeta = \vec{p} \cdot \vec{\eta} = p_3$. Furthermore, $\nabla_x \zeta = 0$.
+
+Let us denote $\tilde{p}^2=p_1^2+p_2^2=||p^2||-p_3^2$ for convenience. 
+
+Our equations become: (I realize there is probably an easier way to derive these, then through back substitution, but this way is more useful as a sanity check)
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+A               &=&  (1+2\epsilon)||p||^2-2\epsilon\zeta^2 \\
+                &=&  ||p||^2+2\epsilon||\tilde{p}||^2 \\
+\nabla_p A      &=&  2(1+2\epsilon)\vec{p}-4\epsilon\zeta\vec{\eta}\\
+                &=&  2(1+2\epsilon)\vec{p}-4\epsilon(0,0,p_3)\\
+\frac{\partial A}{\partial p_3} &=& 2p_3\\
+(i\neq3)\frac{\partial A}{\partial p_i} &=& 2(1+2\epsilon)p_i\\
+\nabla_x A      &=&  2(||p||^2-\zeta^2)\nabla_x \epsilon - 4\epsilon\zeta\nabla_x \zeta\\
+                &=&  2||\tilde{p}||^2\nabla_x \epsilon\\
+A_1             &=&  8(\delta-\epsilon)\zeta^2(||p||^2-\zeta^2) \\
+                &=&  8(\delta-\epsilon)p_3^2||\tilde{p}||^2 \\
+\nabla_p A_1    &=&  16(\delta-\epsilon)\left[\zeta^2\vec{p}+\zeta(||p||^2-2\zeta^2)\vec{\eta}\right]\\
+                &=&  16(\delta-\epsilon)\left[p_3^2\vec{p}+(||\tilde{p}||^2-p_3^2)(0,0,p_3)\right]\\
+\frac{\partial A_1}{\partial p_3} &=& 16(\delta-\epsilon)||\tilde{p}||^2p_3\\
+(i\neq3)\frac{\partial A_1}{\partial p_i} &=& 16(\delta-\epsilon)p_3^2p_i\\
+\nabla_x A_1    &=&  8\zeta^2(||p||^2-\zeta^2)(\nabla_x \delta - \nabla_x \epsilon) + 16\zeta(||p||^2-2\zeta^2)(\delta-\epsilon)\nabla_x \zeta \nonumber\\
+                &=&  8p_3^2||\tilde{p}||^2(\nabla_x \delta - \nabla_x \epsilon) \nonumber
+\end{eqnarray}
+
+Tidying things up:
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+A               &=&  ||p||^2+2\epsilon||\tilde{p}||^2 \\
+\frac{\partial A}{\partial p_3} &=& 2p_3\\
+(i\neq3)\frac{\partial A}{\partial p_i} &=& 2(1+2\epsilon)p_i\\
+\nabla_x A      &=&  2||\tilde{p}||^2\nabla_x \epsilon\\
+A_1             &=&  8(\delta-\epsilon)p_3^2||\tilde{p}||^2 \\
+\frac{\partial A_1}{\partial p_3} &=& 16(\delta-\epsilon)||\tilde{p}||^2p_3\\
+(i\neq3)\frac{\partial A_1}{\partial p_i} &=& 16(\delta-\epsilon)p_3^2p_i\\
+\nabla_x A_1    &=&  8p_3^2||\tilde{p}||^2(\nabla_x \delta - \nabla_x \epsilon) \nonumber
+\end{eqnarray}
+
+Plugging stuff in:
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+D               &=&  A^2 + A_1\\
+                &=&  \left[||p||^2+2\epsilon||\tilde{p}||^2\right]^2+8(\delta-\epsilon)p_3^2||\tilde{p}||^2\\
+                &=&  \left[(1+2\epsilon)||\tilde{p}||^2+p_3^2\right]^2+8(\delta-\epsilon)p_3^2||\tilde{p}||^2\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+\frac{\partial B}{\partial p_3} &=& 2p_3+\frac{1}{2}D^{-\frac{1}{2}}\left[2((1+2\epsilon)||\tilde{p}||^2+p_3^2)2p_3+16(\delta-\epsilon)||\tilde{p}||^2p_3\right]\\
+                &=& 2p_3\left(1+D^{-\frac{1}{2}}\left[((1+2\epsilon)||\tilde{p}||^2+p_3^2)+4(\delta-\epsilon)||\tilde{p}||^2\right]\right)\\
+(i\neq3)\frac{\partial B}{\partial p_i} &=&  2(1+2\epsilon)p_i+\frac{1}{2}D^{-\frac{1}{2}}\left[2((1+2\epsilon)||\tilde{p}||^2+p_3^2)2(1+2\epsilon)p_i + 16(\delta-\epsilon)p_3^2p_i\right]\\
+                &=&  2p_i\left((1+2\epsilon)+D^{-\frac{1}{2}}\left[((1+2\epsilon)||\tilde{p}||^2+p_3^2)(1+2\epsilon) + 4(\delta-\epsilon)p_3^2\right]\right)\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+                &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2(||p||^2+2\epsilon||\tilde{p}||^2)2||\tilde{p}||^2\nabla_x \epsilon + 8p_3^2||\tilde{p}||^2(\nabla_x \delta - \nabla_x \epsilon) \right] \nonumber\\
+                &=&  \nabla_x A+4\frac{1}{2}D^{-\frac{1}{2}}\left[((1+2\epsilon)||\tilde{p}||^2+p_3^2)||\tilde{p}||^2\nabla_x \epsilon + 2p_3^2||\tilde{p}||^2(\nabla_x \delta - \nabla_x \epsilon) \right] \nonumber\\
+                &=&  2\left(||\tilde{p}||^2\nabla_x \epsilon+D^{-\frac{1}{2}}\left[((1+2\epsilon)||\tilde{p}||^2+p_3^2)||\tilde{p}||^2\nabla_x \epsilon + 2p_3^2||\tilde{p}||^2(\nabla_x \delta - \nabla_x \epsilon) \right] \right) \nonumber
+\end{eqnarray}
+
+\textbf{Elliptical anisotropy}
+
+For elliptical anisotropy, we set $\delta = \epsilon$. And, of course, the gradients are also equal, $\nabla_x \delta = \nabla_x \epsilon$.
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+A               &=&  (1+2\epsilon)||p||^2-2\epsilon\zeta^2 \\
+                &=&  (1+2\delta)||p||^2-2\delta\zeta^2 \\
+\nabla_p A      &=&  2(1+2\epsilon)\vec{p}-4\epsilon\zeta\vec{\eta}\\
+                &=&  2(1+2\delta)\vec{p}-4\delta\zeta\vec{\eta}\\
+\nabla_x A      &=&  2(||p||^2-\zeta^2)\nabla_x \epsilon - 4\epsilon\zeta\nabla_x \zeta\\
+                &=&  2(||p||^2-\zeta^2)\nabla_x \delta - 4\epsilon\zeta\nabla_x \zeta\\
+A_1             &=&  8(\delta-\epsilon)\zeta^2(||p||^2-\zeta^2) \\
+                &=&  0 \\
+\nabla_p A_1    &=&  16(\delta-\epsilon)\left[\zeta^2\vec{p}+\zeta(||p||^2-2\zeta^2)\vec{\eta}\right]\\
+                &=&  0\\
+\nabla_x A_1    &=&  8\zeta^2(||p||^2-\zeta^2)(\nabla_x \delta - \nabla_x \epsilon) + 16\zeta(||p||^2-2\zeta^2)(\delta-\epsilon)\nabla_x \zeta \nonumber\\
+                &=&  0\\
+\end{eqnarray}
+
+Plugging stuff in:
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+D               &=&  A^2+A_1\\
+                &=&  A^2\\
+B               &=&  A+\sqrt{D}\\
+                &=&  2A\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+                &=&  \nabla_p A+\frac{1}{2}\frac{1}{A}\left[2A\nabla_p A\right]\\
+                &=&  2\nabla_p A\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+                &=&  \nabla_x A+\frac{1}{2}\frac{1}{A}\left[2A\nabla_x A\right]\\
+                &=&  2\nabla_x A
+\end{eqnarray}
+
+Plugging some more stuff in:
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+                &=&  \frac{1}{2}v_p^2\nabla_p A\\
+                &=&  \frac{1}{2}v_p^2(2(1+2\delta)\vec{p}-4\delta\zeta\vec{\eta})\\
+                &=&  v_p^2((1+2\delta)\vec{p}-2\delta\zeta\vec{\eta})\\
+                &=&  v_p^2((1+2\delta)\vec{p}-2\delta(\vec{p}\cdot\vec{\eta})\vec{\eta})\\
+                &=&  v_p^2\vec{p_1}((1+2\delta)-2\delta\cos^2\theta)\\
+                &=&  v_p^2\vec{p_1}(1+2\delta\sin^2\theta)\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+                &=& -v_p A \nabla_xv_p - \frac{1}{2}v_p^2\nabla_xA\\
+                &=& -v_p ((1+2\delta)||p||^2-2\delta\zeta^2) \nabla_xv_p - \frac{1}{2}v_p^2(2(||p||^2-\zeta^2)\nabla_x \delta - 4\epsilon\zeta\nabla_x \zeta) \nonumber\\
+                &=& -v_p ((1+2\delta)||p||^2-2\delta\zeta^2) \nabla_xv_p - v_p^2((||p||^2-\zeta^2)\nabla_x \delta - 2\epsilon\zeta\nabla_x \zeta) \nonumber
+\end{eqnarray}
+
+If we perform some analysis on this result, we can easily see that when the angle between the symmetry axis, and $p$ is zero, $\frac{dx}{dt}=v_p^2\vec{p}$. When the angle is $90^o$, $\frac{dx}{dt}=v_p^2\vec{p}(1+2\delta)$. Furthermore, we can generalize this to $\frac{dx}{dt}(\theta) = v_p^2\vec{p_1}(1+2\delta\sin^2(\theta))$, where $\theta$ is the angle between $\vec{p_1}$ and the symmetry axis $\vec{\eta}$. 
+
+\textbf{Weak Anisotropy}
+
+For weak anisotropy, we make the assumption that $\epsilon,\delta<<1$. 
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+A               &=&  (1+2\epsilon)||p||^2-2\epsilon\zeta^2 \\
+\nabla_p A      &=&  2(1+2\epsilon)\vec{p}-4\epsilon\zeta\vec{\eta}\\
+\nabla_x A      &=&  2(||p||^2-\zeta^2)\nabla_x \epsilon - 4\epsilon\zeta\nabla_x \zeta\\
+A_1             &=&  8(\delta-\epsilon)\zeta^2(||p||^2-\zeta^2) \\
+\nabla_p A_1    &=&  16(\delta-\epsilon)\left[\zeta^2\vec{p}+\zeta(||p||^2-2\zeta^2)\vec{\eta}\right]\\
+\nabla_x A_1    &=&  8\zeta^2(||p||^2-\zeta^2)(\nabla_x \delta - \nabla_x \epsilon) + 16\zeta(||p||^2-2\zeta^2)(\delta-\epsilon)\nabla_x \zeta \nonumber\\
+\end{eqnarray}
+
+\textbf{Isotropic Medium (yet another sanity check)}
+
+For isotropic media, the quantities $\epsilon,\delta$ are zero, and obviously their gradients also become zero.
+
+We have our original equations:
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+A               &=&  (1+2\epsilon)||p||^2-2\epsilon\zeta^2 \\
+                &=&  ||p||^2 \\
+\nabla_p A      &=&  2(1+2\epsilon)\vec{p}-4\epsilon\zeta\vec{\eta}\\
+                &=&  2\vec{p}\\
+\nabla_x A      &=&  2(||p||^2-\zeta^2)\nabla_x \epsilon - 4\epsilon\zeta\nabla_x \zeta\\
+                &=&  0\\
+A_1             &=&  8(\delta-\epsilon)\zeta^2(||p||^2-\zeta^2) \\
+                &=&  0 \\
+\nabla_p A_1    &=&  16(\delta-\epsilon)\left[\zeta^2\vec{p}+\zeta(||p||^2-2\zeta^2)\vec{\eta}\right]\\
+                &=&  0\\
+\nabla_x A_1    &=&  8\zeta^2(||p||^2-\zeta^2)(\nabla_x \delta - \nabla_x \epsilon) + 16\zeta(||p||^2-2\zeta^2)(\delta-\epsilon)\nabla_x \zeta \nonumber\\
+                &=&  0 \nonumber
+\end{eqnarray}
+
+Plugging stuff in:
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+D               &=&  =A^2+A_1=||p||^4\\
+\nabla_p B      &=&  \nabla_p A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_p A + \nabla_p A_1\right]\\
+                &=&  2\vec{p}+\frac{1}{2}D^{-\frac{1}{2}}\left[2||p||^22\vec{p}\right]\\
+                &=&  2\vec{p}(1+D^{-\frac{1}{2}}||p||^2)\\
+                &=&  4\vec{p}\\
+\nabla_x B      &=&  \nabla_x A+\frac{1}{2}D^{-\frac{1}{2}}\left[2A\nabla_x A + \nabla_x A_1\right]\\
+                &=&  0
+\end{eqnarray}
+
+Plugging some more stuff in:
+
+\begin{eqnarray}
+B               &=&  A + \sqrt{D}\\
+                &=&  ||p||^2 + \sqrt{||p||^4}\\
+                &=&  2||p||^2\\
+\frac{dx}{dt}   &=&  \frac{1}{2}\nabla_p G(x,p) =  \frac{1}{4}v_p^2\nabla_pB\\
+                &=&  \frac{1}{4}v_p^24\vec{p}\\
+                &=&  v_p^2\vec{p}\\
+\frac{dp}{dt}   &=& -\frac{1}{2}\nabla_x G(x,p) = -\frac{1}{2}v_pB\nabla_xv_p-\frac{1}{4}v_p^2\nabla_xB\\
+                &=& -\frac{1}{2}v_p2||p||^2\nabla_xv_p\\
+                &=& -v_p||p||^2\nabla_xv_p 
+\end{eqnarray}
+
+If we convert to slowness, $v_p=\frac{1}{U}$, and plug that in:
+
+\begin{eqnarray}
+\frac{dx}{dt}   &=&  \frac{1}{U^2}\vec{p}\\
+\frac{\partial v_p}{\partial x_i} &=& \frac{\partial}{\partial x_i} \frac{1}{U} = - \frac{1}{U^2} \frac{\partial U}{\partial x_i}\\
+\frac{dp}{dt}   &=&  -v_p||p||^2\left(\frac{\partial v_p}{\partial x},\frac{\partial v_p}{\partial y},\frac{\partial v_p}{\partial z}\right)\\
+                &=&  \frac{||p||^2}{U^3}\left(\frac{\partial U}{\partial x},\frac{\partial U}{\partial y},\frac{\partial U}{\partial z}\right)\\
+                &=&  \frac{||p||^2}{U^3}\nabla U
+\end{eqnarray}
+
+If we perform unit analysis, with the assumption that $p$ has units of $\left[\frac{s}{m}\right]$, and of course slowness $U$ has units $\left[\frac{s}{m}\right]$, $\left[\frac{dx}{dt}\right] = \left[\frac{m}{s}\right]$ and $\left[\frac{\vec{p}}{U^2}\right] = \left[\frac{m}{s}\right]$. Furthermore, $\left[\frac{dp}{dt}\right] = \left[\frac{1}{m}\right]$ and $\left[\frac{||p||^2}{U^3}\nabla U\right] = \left[\frac{1}{m}\right]$.
+
+\end{document}
+
+
